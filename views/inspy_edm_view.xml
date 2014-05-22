@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+		<!-- Search -->
+
+        <record id="view_inspy_edm_doc_filter" model="ir.ui.view">
+            <field name="name">inspy.edm.doc.select</field>
+            <field name="model">inspy.edm.doc</field>
+            <field name="arch" type="xml">
+                <search string="Filter document">
+                   <field name="name"
+                   		filter_domain="['|','|','|','|',('name','ilike',self),('content_filename','ilike',self),('description','ilike',self),('additional_information','ilike',self)]" string="All"/>
+               		<field name="name"/>
+               		<field name="description"/>
+               		<field name="content_filename"/>
+               		<field name="additional_information"/>
+               		<field name="type_document"/>
+               		<field name="partner_id"/>
+                   <separator/>
+                   <group expand="0" string="Group by ...">
+                       <filter string="Partner" domain="[]" context="{'group_by' : 'partner_id'}" />
+                       <filter string="Type" domain="[]" context="{'group_by' : 'type_document'}" />
+                   </group>
+               </search>
+            </field>
+        </record>
+
+
+
+
+        <!-- Actions -->
+    	
+         <record id="action_inspy_edm_doc" model="ir.actions.act_window">
+            <field name="name">Documents</field>
+            <field name="res_model">inspy.edm.doc</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        
+        
+        
+        <!-- Menu -->
+        
+    	<menuitem id="main_inspy_edm"
+			name="EDM"/>
+		
+		<menuitem id="menu_inspy_edm" 
+			parent="main_inspy_edm"
+			name="EDM"/>
+			
+		<menuitem id="menu_inspy_edm_doc" 
+			parent="menu_inspy_edm"
+			name="Documents"
+			action="action_inspy_edm_doc"/>
+        
+        
+        
+        
+        <!-- Doc Views -->
+		
+		<record id="view_inspy_edm_doc_form" model="ir.ui.view">
+            <field name="name">inspy.edm.doc.form</field>
+            <field name="model">inspy.edm.doc</field>
+            <field name="arch" type="xml">
+                <form string="Document" version="7.0">
+                	<header>
+                	</header>
+                	<sheet>
+                		<group>
+	                		<field name="name"/>
+	                		<field name="description"/>
+	                		<field name="type_document"/>
+	                		<field name="partner_id"/>
+	                		<field name="content_filename" invisible="1"/>
+	                		<field name="content" filename="content_filename"/>
+	                		<field name="additional_information"/>
+                		</group>
+                	</sheet>
+                </form>
+            </field>
+        </record>
+
+		<record id="view_inspy_edm_doc_tree" model="ir.ui.view">
+            <field name="name">inspy.edm.doc.tree</field>
+            <field name="model">inspy.edm.doc</field>
+            <field name="arch" type="xml">
+                <tree string="Documents list">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="type_document"/>
+                    <field name="partner_id"/>
+                    <field name="content_filename"/>
+                    <field name="additional_information"/>
+                </tree>
+            </field>
+        </record>
+        
+        
+        
+	</data>
+</openerp>

@@ -1,0 +1,25 @@
+<openerp>
+    <data>
+
+        <record id="view_partner_doc_form" model="ir.ui.view">
+            <field name="name">res.partner.doc.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <page name="internal_notes" position="inside">
+                    <label for="document_ids" string="Documents"/>
+                    <field name="document_ids">
+                    	<tree string="Documents">
+                    		<field name="name"/>
+                    		<field name="description"/>
+                    		<field name="type_document"/>
+                    		<field name="content_filename" invisible="1"/>
+                    		<field name="content" filename="content_filename"/>
+                    	</tree>
+                    </field>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>
