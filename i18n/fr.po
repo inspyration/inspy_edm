@@ -86,7 +86,7 @@ msgstr "Document"
 
 #. module: inspy_edm
 #: view:inspy.edm.doc:0
-#: field:inspy.edm.doc,type_document:0
+#: field:inspy.edm.doc,type_id:0
 msgid "Type"
 msgstr "Type"
 

@@ -15,12 +15,12 @@
                		<field name="description"/>
                		<field name="content_filename"/>
                		<field name="additional_information"/>
-               		<field name="type_document"/>
+               		<field name="type_id"/>
                		<field name="partner_id"/>
                    <separator/>
                    <group expand="0" string="Group by ...">
                        <filter string="Partner" domain="[]" context="{'group_by' : 'partner_id'}" />
-                       <filter string="Type" domain="[]" context="{'group_by' : 'type_document'}" />
+                       <filter string="Type" domain="[]" context="{'group_by' : 'type_id'}" />
                    </group>
                </search>
             </field>
@@ -70,7 +70,7 @@
                 		<group>
 	                		<field name="name"/>
 	                		<field name="description"/>
-	                		<field name="type_document"/>
+	                		<field name="type_id"/>
 	                		<field name="partner_id"/>
 	                		<field name="content_filename" invisible="1"/>
 	                		<field name="content" filename="content_filename"/>
@@ -88,7 +88,7 @@
                 <tree string="Documents list">
                     <field name="name"/>
                     <field name="description"/>
-                    <field name="type_document"/>
+                    <field name="type_id"/>
                     <field name="partner_id"/>
                     <field name="content_filename"/>
                     <field name="additional_information"/>

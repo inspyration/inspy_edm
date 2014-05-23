@@ -51,7 +51,7 @@ class Document(osv.Model):
         'description': fields.text(
             string="Description",
         ),
-        'type_document': fields.many2one(
+        'type_id': fields.many2one(
             'inspy.edm.type',
             required=True,
             string="Type",
