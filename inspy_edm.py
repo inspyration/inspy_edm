@@ -52,7 +52,7 @@ class Document(osv.Model):
             string="Description",
         ),
         'type_id': fields.many2one(
-            'inspy.edm.type',
+            'semantics.signifier',
             required=True,
             string="Type",
         ),
