@@ -6,6 +6,11 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
+                <xpath expr="//div[@name='buttons']" position="inside">
+                    <button class="oe_inline" type="action" string="Documents"
+                        name="%(inspy_edm.action_inspy_edm_doc)d"
+                        context="{'search_default_partner_id': active_id}" />
+                </xpath>
                 <page name="internal_notes" position="inside">
                     <label for="document_ids" string="Documents"/>
                     <field name="document_ids">
