@@ -55,6 +55,7 @@ class Document(osv.Model):
             'semantics.signifier',
             required=True,
             string="Type",
+            domain=[('field_id.name','=',"Partner's documents types")],
         ),
         'content': fields.binary(
             string="Content",
