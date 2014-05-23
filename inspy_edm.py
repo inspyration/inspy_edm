@@ -73,6 +73,14 @@ class Document(osv.Model):
             required=True,
             string="Partner",
         ),
+        'tag_ids': fields.many2many(
+            'semantics.signifier',
+            'inspy_doc_tag_rel',
+            'tag_id',
+            'doc_id',
+            string="Tags",
+            domain=[('field_id.name','=',"Partner's documents key words")],
+        ),
     }
     
 #==============================================================================#

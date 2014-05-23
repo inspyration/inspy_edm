@@ -75,6 +75,7 @@
 	                		<field name="content_filename" invisible="1"/>
 	                		<field name="content" filename="content_filename"/>
 	                		<field name="additional_information"/>
+	                		<field name="tag_ids" widget="many2many_tags"/>
                 		</group>
                 	</sheet>
                 </form>
