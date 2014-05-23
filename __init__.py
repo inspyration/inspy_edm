@@ -18,14 +18,5 @@
 #
 ##############################################################################
 
-__author__ = "Sébastien CHAZALLET & Alicia FLOREZ"
-__copyright__ = "Copyright 2014"
-__credits__ = ["Sébastien CHAZALLET", "Alicia FLOREZ", "www.insPyration.fr", "www.formation-python.com"]
-__license__ = "AGPL"
-__version__ = "1.0"
-__maintainer__ = "Alicia FLOREZ"
-__email__ = "contact@inspyration.fr"
-__status__ = "Production"
-
 import inspy_edm
 import res_partner
