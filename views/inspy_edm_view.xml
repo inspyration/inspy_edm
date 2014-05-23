@@ -59,25 +59,26 @@
         
         <!-- Doc Views -->
             
-            <record id="view_inspy_edm_doc_form" model="ir.ui.view">
+        <record id="view_inspy_edm_doc_form" model="ir.ui.view">
             <field name="name">inspy.edm.doc.form</field>
             <field name="model">inspy.edm.doc</field>
             <field name="arch" type="xml">
                 <form string="Document" version="7.0">
-                      <header>
-                      </header>
-                      <sheet>
-                            <group>
-                                  <field name="name"/>
-                                  <field name="description"/>
-                                  <field name="type_id"/>
-                                  <field name="partner_id"/>
-                                  <field name="content_filename" invisible="1"/>
-                                  <field name="content" filename="content_filename"/>
-                                  <field name="additional_information"/>
-                                  <field name="tag_ids" widget="many2many_tags"/>
-                            </group>
-                      </sheet>
+                    <header/>
+                    <sheet>
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name"/></h1>
+                        <label for="tag_ids" class="oe_edit_only" string="Tags :"/>
+                        <field name="tag_ids" widget="many2many_tags" colspan="4"/>
+                        <group>
+                            <field name="description"/>
+                            <field name="type_id"/>
+                            <field name="partner_id"/>
+                            <field name="content_filename" invisible="1"/>
+                            <field name="content" filename="content_filename"/>
+                            <field name="additional_information"/>
+                        </group>
+                    </sheet>
                 </form>
             </field>
         </record>
