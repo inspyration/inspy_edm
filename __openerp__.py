@@ -31,7 +31,7 @@
     """,
     'website': 'http://www.inspyration.fr',
     'images' : [],
-    'depends' : ['base'],
+    'depends' : ['base','semantics'],
     'data': [
         'views/inspy_edm_view.xml',
         'res_partner/views/res_partner_view.xml',
