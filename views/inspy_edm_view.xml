@@ -74,9 +74,10 @@
                             <field name="description"/>
                             <field name="type_id"/>
                             <field name="partner_id"/>
-                            <field name="type"/>
-                            <field name="content_filename" invisible="1"/>
-                            <field name="content" filename="content_filename"/>
+                            <field name="file_type"/>
+                            <field name="content_filename" invisible="1" attrs="{'invisible':[('file_type','=','url')]}"/>
+                            <field name="content" filename="content_filename" attrs="{'invisible':[('file_type','=','url')]}"/>
+                            <field name="url" attrs="{'invisible':[('file_type','=','binary')]}"/>
                             <field name="additional_information"/>
                         </group>
                     </sheet>
@@ -94,6 +95,7 @@
                     <field name="type_id"/>
                     <field name="partner_id"/>
                     <field name="content_filename"/>
+                    <field name="url"/>
                     <field name="additional_information"/>
                 </tree>
             </field>
