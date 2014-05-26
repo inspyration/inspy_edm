@@ -70,7 +70,6 @@ class Document(osv.Model):
         ),
         'partner_id': fields.many2one(
             'res.partner',
-            required=True,
             string="Partner",
         ),
         'tag_ids': fields.many2many(
