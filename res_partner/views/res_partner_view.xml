@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <openerp>
     <data>
 
@@ -11,7 +12,7 @@
                         name="%(inspy_edm.action_inspy_edm_doc)d"
                         context="{'search_default_partner_id': active_id}" />
                 </xpath>
-                <page name="internal_notes" position="inside">
+                <xpath expr="//page[@string='Internal Notes']" position="inside">
                     <label for="document_ids" string="Documents"/>
                     <field name="document_ids">
                        <tree string="Documents">
@@ -22,7 +23,7 @@
                           <field name="content" filename="content_filename"/>
                        </tree>
                     </field>
-                </page>
+                </xpath>
             </field>
         </record>
 
