@@ -10,14 +10,17 @@
             <field name="arch" type="xml">
                 <search string="Filter document">
                    <field name="name"
-                               filter_domain="['|','|','|','|',('name','ilike',self),('content_filename','ilike',self),('description','ilike',self),('additional_information','ilike',self)]" string="All"/>
+                               filter_domain="['|','|','|','|','|',('name','ilike',self),('content_filename','ilike',self),('description','ilike',self),('additional_information','ilike',self),('url','ilike',self)]" string="All"/>
                            <field name="name"/>
                            <field name="description"/>
                            <field name="content_filename"/>
                            <field name="additional_information"/>
                            <field name="type_id"/>
                            <field name="partner_id"/>
+                           <field name="url"/>
                    <separator/>
+                   <filter string="Binay" name="type_binay" domain="[('file_type','=','binary')]"/>
+                   <filter string="Url" name="type_url" domain="[('file_type','=','url')]"/>
                    <group expand="0" string="Group by ...">
                        <filter string="Partner" domain="[]" context="{'group_by' : 'partner_id'}" />
                        <filter string="Type" domain="[]" context="{'group_by' : 'type_id'}" />
