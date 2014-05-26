@@ -57,6 +57,13 @@ class Document(osv.Model):
             string="Type",
             domain=[('field_id.name','=',"Partner's documents types")],
         ),
+        'type': fields.selection(
+            [ ('url','URL'), ('binary','Binary'), ],
+            'Type',
+            help="Binary File or URL",
+            required=True,
+            change_default=True,
+        ),
         'content': fields.binary(
             string="Content",
         ),
@@ -81,7 +88,10 @@ class Document(osv.Model):
             domain=[('field_id.name','=',"Partner's documents key words")],
         ),
     }
-    
+
+    _defaults = {
+        'type': 'binary',
+    }
 #==============================================================================#
 #                                 class type                                   #
 #==============================================================================#
