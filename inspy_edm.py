@@ -56,6 +56,7 @@ class Document(osv.Model):
             required=True,
             string="Type",
             domain=[('field_id.name','=',"Partner's documents types")],
+            help="Type = Partner's documents types"
         ),
         'file_type': fields.selection(
             [ ('url','URL'), ('binary','Binary'), ],
@@ -89,6 +90,7 @@ class Document(osv.Model):
             'doc_id',
             string="Tags",
             domain=[('field_id.name','=',"Partner's documents key words")],
+            help="Type = Partner's documents key words"
         ),
     }
 
