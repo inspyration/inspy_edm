@@ -72,6 +72,10 @@ class Document(osv.Model):
             size=256,
             select=True,
         ),
+        'url': fields.char(
+            size=1024,
+            string="Url",
+        ),
         'additional_information': fields.text(
             string="Additional information",
         ),
