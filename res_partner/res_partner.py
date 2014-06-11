@@ -33,10 +33,21 @@ from openerp.osv import fields,osv
 class res_partner(osv.osv):
     _inherit = 'res.partner'
 
+    def _edm_docs_count(self, cr, uid, ids, field_name, arg, context=None):
+        res = {}
+        for partner in self.browse(cr, uid, ids, context=context):
+            res[partner.id] = len(partner.document_ids)
+        return res
+
     _columns = {
         'document_ids': fields.one2many(
             'inspy.edm.doc',
             'partner_id',
             string="Documents",
+        ),
+        'edm_docs_count': fields.function(
+            _edm_docs_count,
+            string="Documents",
+            type='integer',
         ),
     }
