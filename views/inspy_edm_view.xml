@@ -17,7 +17,7 @@
                    <field name="additional_information"/>
                    <field name="type_id"/>
                    <field name="partner_id"/>
-                   <field name="url"/>
+                   <field name="url" widget="url"/>
                    <separator/>
                    <filter string="Binay" name="type_binay" domain="[('file_type','=','binary')]"/>
                    <filter string="Url" name="type_url" domain="[('file_type','=','url')]"/>
